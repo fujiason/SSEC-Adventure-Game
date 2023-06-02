@@ -12,10 +12,11 @@ items = {"nylon": 0, "smoker": 0, "ice": 0, "jellybean": 0, "weatherballoon": 0,
 events ={"AERI": 0, "LIDAR": 0, "HSRL": 0, "umbrella": 0, "roof": 0, "jellybean": 0, "ants": 0, "beekeeper": 0, "well": 0, "cloud": 0, "pond": 0, "ending": 0}
 
 # Code or level of completion for minigames
-HSRL = ""
-AERI = 0
-LIDAR = ""
-jellybeans = ""
+HSRL = [0, 0, 0, 0, 0] # if sum is 5 then minigame is solved
+HSRLprev = -1 # don't set to modded number but if this number mod 5 matches with the selected number mod 5, update HSRL list at position and reset this to -1
+AERI = 0 # minigame is solved if all levels are passed (becomes a 4)
+LIDAR = "" # minigame is solved if given the right combo
+jellybeans = "" # minigame is solved if given the right code
 
 # mouse stuff
 click = False
