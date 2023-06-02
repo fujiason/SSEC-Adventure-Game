@@ -219,6 +219,8 @@ while running:
         entrance()
     elif location == "parking":
         parking()
+    elif location == "lidar":
+        lidar()
 
 
     # create hotbar with combine and use buttons
