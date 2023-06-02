@@ -13,7 +13,7 @@ events ={"AERI": 0, "LIDAR": 0, "HSRL": 0, "umbrella": 0, "roof": 0, "jellybean"
 
 # Code or level of completion for minigames
 HSRL = ""
-AERI = ""
+AERI = 0
 LIDAR = ""
 jellybeans = ""
 
@@ -151,6 +151,48 @@ def lidar():
                 print("Yes", LIDAR)
             else:
                 print("No", LIDAR)
+    else:
+        screen.blit(cursor, mouse)
+    click = False
+
+def aeri():
+    global location, items, events, mouse, click, AERI, LIDAR, HSRL
+
+    # Change mouse cursor if on button and switch modes when clicked
+    pygame.draw.rect(screen, "red",[0,0,40,40])
+    pygame.draw.rect(screen, "blue",[40,0,40,40])
+    pygame.draw.rect(screen, "green",[0,40,40,40])
+    pygame.draw.rect(screen, "black",[40,40,40,40])
+
+    if click:
+        if AERI == 0:
+            background = pygame.image.load("./sketches/entrance.png")
+            screen.blit(background, (0, 0))
+            if 0 <= mouse[0] <= 40 and 0 <= mouse[1] <= 40:
+                AERI += 1
+            else:
+                print("Try again")
+        elif AERI == 1:
+            background = pygame.image.load("./sketches/entrance.png")
+            screen.blit(background, (0, 0))
+            if 40 <= mouse[0] <= 80 and 0 <= mouse[1] <= 40:
+                AERI += 1
+            else:
+                print("Try again")
+        elif AERI == 2:
+            background = pygame.image.load("./sketches/entrance.png")
+            screen.blit(background, (0, 0))
+            if 0 <= mouse[0] <= 40 and 40 <= mouse[1] <= 80:
+                AERI += 1
+            else:
+                print("Try again")
+        elif AERI == 3:
+            background = pygame.image.load("./sketches/entrance.png")
+            screen.blit(background, (0, 0))
+            if 40 <= mouse[0] <= 80 and 40 <= mouse[1] <= 80:
+                AERI += 1
+            else:
+                print("Try again")
     else:
         screen.blit(cursor, mouse)
     click = False
